@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Employee</string>
+    <string name="employeeHeader">Έντυπο αδείας Εργαζομένου</string>
+    <string name="nameHint">Όνομα</string>
+    <string name="surnameHint">Επίθετο</string>
+    <string name="roleHint">Ρόλος στην Εταιρεία</string>
+    <string name="companyPartHint">Τμήμα</string>
+    <string name="typeOfLeave">Είδος αδείας:</string>
+    <string name="fromDate">ΑΠΟ</string>
+    <string name="toDate">ΜΕΧΡΙ</string>
+    <string name="submitBtn">ΑΠΟΣΤΟΛΗ</string>
+    <string name="days">Ημέρες</string>
+    <string name="empty_date">../../....</string>
+
+    <string-array name="typeOfLeave">
+        <item>Επιλέξτε τύπο άδειας</item>
+        <item>Κανονική άδεια</item>
+        <item>Άδεια άνευ αποδοχών</item>
+        <item>Άδεια μετά αποδοχών</item>
+        <item>Άδεια ολίγων ωρών</item>
+        <item>Άδεια ασθενείας</item>
+    </string-array>
+</resources>
