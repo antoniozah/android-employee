@@ -11,17 +11,19 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/ThemeOverlay.MaterialComponents.Toolbar.Surface"
+        style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:title="Έντυπο αδείας εργαζομένου"
+        app:title="@string/appTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
    <ScrollView
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:fillViewport="true"
+       android:layout_height="0dp"
+       android:paddingVertical="10dp"
+       android:paddingHorizontal="16dp"
+       android:clipToPadding="false"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@id/toolbar"
        app:layout_constraintBottom_toTopOf="@id/submitBtn">
@@ -30,171 +32,169 @@
            android:id="@+id/innerConstraint"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:paddingVertical="10dp"
-           android:paddingHorizontal="16dp"
            android:clickable="true"
            android:focusable="true"
            android:focusableInTouchMode="true">
 
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/input_name_layout"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="16dp"
-           android:hint="@string/nameHint"
-           app:layout_constraintTop_toTopOf="@+id/innerConstraint"
-           app:layout_constraintStart_toStartOf="parent">
-
-           <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/input_name_edit"
-               style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
-
-       </com.google.android.material.textfield.TextInputLayout>
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/input_surname_layout"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           android:hint="@string/surnameHint"
-           app:layout_constraintTop_toBottomOf="@id/input_name_layout"
-           app:layout_constraintStart_toStartOf="parent">
-
-           <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/input_surname_edit"
-               style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
-
-       </com.google.android.material.textfield.TextInputLayout>
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/input_role_layout"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           android:hint="@string/roleHint"
-           app:layout_constraintTop_toBottomOf="@id/input_surname_layout"
-           app:layout_constraintStart_toStartOf="parent">
-
-           <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/input_role_edit"
-               style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
-
-       </com.google.android.material.textfield.TextInputLayout>
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/input_part_layout"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           android:hint="@string/companyPartHint"
-           app:layout_constraintTop_toBottomOf="@id/input_role_layout"
-           app:layout_constraintStart_toStartOf="parent">
-
-           <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/input_part_edit"
-               style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content" />
-
-       </com.google.android.material.textfield.TextInputLayout>
-
-       <TextView
-           android:id="@+id/leave_type"
-           style="@style/Widget.MaterialComponents.TextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           android:layout_marginEnd="10dp"
-           android:textSize="16sp"
-           android:text="@string/typeOfLeave"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/input_part_layout"
-           />
-
-       <Spinner
-           android:id="@+id/spinner"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/input_part_layout"
-           />
-
-       <TextView
-           android:id="@+id/dateFromDate"
-           style="@style/Widget.MaterialComponents.TextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="16sp"
-           android:textStyle="bold"
-           android:text="@string/empty_date"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintBaseline_toBaselineOf="@id/dateFromBtn"
-           />
-
-       <com.google.android.material.button.MaterialButton
-           android:id="@+id/dateFromBtn"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           style="@style/normalText"
-           android:layout_marginTop="16dp"
-           android:layout_marginStart="20dp"
-           android:text="@string/fromDate"
-           app:layout_constraintStart_toEndOf="@id/dateFromDate"
-           app:layout_constraintTop_toBottomOf="@id/spinner" />
-
-       <TextView
-           android:id="@+id/dateToDate"
-           style="@style/Widget.MaterialComponents.TextView"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textSize="16sp"
-           android:textStyle="bold"
-           android:text="@string/empty_date"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintBaseline_toBaselineOf="@id/dateToBtn" />
-
-       <com.google.android.material.button.MaterialButton
-           android:id="@+id/dateToBtn"
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="16dp"
-           android:layout_marginStart="20dp"
-           android:text="@string/toDate"
-           app:layout_constraintStart_toEndOf="@+id/dateToDate"
-           app:layout_constraintTop_toBottomOf="@id/dateFromBtn"
-           />
-
-       <com.google.android.material.textfield.TextInputLayout
-           android:id="@+id/input_days_layout"
-           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-           android:layout_width="100dp"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="12dp"
-           android:layout_marginHorizontal="6dp"
-           android:hint="@string/days"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toTopOf="@id/dateFromBtn"
-           app:layout_constraintBottom_toBottomOf="@id/dateToBtn">
-
-           <com.google.android.material.textfield.TextInputEditText
-               android:id="@+id/input_days_edit"
-               style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_name_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:inputType="number"/>
+               android:hint="@string/nameHint"
+               app:layout_constraintTop_toTopOf="@+id/innerConstraint"
+               app:layout_constraintStart_toStartOf="parent">
 
-       </com.google.android.material.textfield.TextInputLayout>
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_name_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_surname_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:hint="@string/surnameHint"
+               app:layout_constraintTop_toBottomOf="@id/input_name_layout"
+               app:layout_constraintStart_toStartOf="parent">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_surname_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_role_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:hint="@string/roleHint"
+               app:layout_constraintTop_toBottomOf="@id/input_surname_layout"
+               app:layout_constraintStart_toStartOf="parent">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_role_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_part_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:hint="@string/companyPartHint"
+               app:layout_constraintTop_toBottomOf="@id/input_role_layout"
+               app:layout_constraintStart_toStartOf="parent">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_part_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <TextView
+               android:id="@+id/leave_type"
+               style="@style/Widget.MaterialComponents.TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginEnd="10dp"
+               android:textSize="16sp"
+               android:text="@string/typeOfLeave"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/input_part_layout"
+               />
+
+           <Spinner
+               android:id="@+id/spinner"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/input_part_layout"
+               />
+
+           <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/dateFromDate"
+               style="@style/Widget.MaterialComponents.TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:textStyle="bold"
+               android:text="@string/empty_date"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBaseline_toBaselineOf="@id/dateFromBtn"
+               />
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/dateFromBtn"
+               style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               android:layout_marginStart="20dp"
+               android:text="@string/fromDate"
+               app:layout_constraintStart_toEndOf="@id/dateFromDate"
+               app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+           <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/dateToDate"
+               style="@style/Widget.MaterialComponents.TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="16sp"
+               android:textStyle="bold"
+               android:text="@string/empty_date"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBaseline_toBaselineOf="@id/dateToBtn" />
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/dateToBtn"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               android:layout_marginStart="20dp"
+               android:text="@string/toDate"
+               app:layout_constraintStart_toEndOf="@+id/dateToDate"
+               app:layout_constraintTop_toBottomOf="@id/dateFromBtn"
+               />
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_days_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="90dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginHorizontal="6dp"
+               android:hint="@string/days"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="@id/dateFromBtn"
+               app:layout_constraintBottom_toBottomOf="@id/dateToBtn">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_days_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="number"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
        </androidx.constraintlayout.widget.ConstraintLayout>
 
    </ScrollView>
@@ -204,6 +204,8 @@
         android:id="@+id/submitBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:layout_marginHorizontal="16dp"
         android:text="@string/submitBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

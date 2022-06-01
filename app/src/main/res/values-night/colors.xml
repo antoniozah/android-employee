@@ -10,12 +10,12 @@
     <color name="secondary_dark">#006978</color>
     <color name="on_secondary">#000000</color>
 
-    <color name="surface">#f7f7f7</color>
-    <color name="surface_variant">#CACACA</color>
-    <color name="on_surface">#000000</color>
+    <color name="surface">#020202</color>
+    <color name="surface_variant">#0e0e0e</color>
+    <color name="on_surface">#ffffff</color>
 
-    <color name="background">#EDEDED</color>
-    <color name="on_background">#000000</color>
+    <color name="background">#232323</color>
+    <color name="on_background">#EDEDED</color>
 
     <color name="error">#e60000</color>
     <color name="on_error">#ffffff</color>

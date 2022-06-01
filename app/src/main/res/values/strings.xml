@@ -11,6 +11,7 @@
     <string name="submitBtn">ΑΠΟΣΤΟΛΗ</string>
     <string name="days">Ημέρες</string>
     <string name="empty_date">../../....</string>
+    <string name="appTitle">Έντυπο αδείας εργαζομένου</string>
 
     <string-array name="typeOfLeave">
         <item>Επιλέξτε τύπο άδειας</item>
