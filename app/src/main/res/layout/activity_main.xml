@@ -25,6 +25,7 @@
        android:paddingHorizontal="16dp"
        android:clipToPadding="false"
        app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toBottomOf="@id/toolbar"
        app:layout_constraintBottom_toTopOf="@id/submitBtn">
 
@@ -107,7 +108,7 @@
 
            </com.google.android.material.textfield.TextInputLayout>
 
-           <TextView
+           <com.google.android.material.textview.MaterialTextView
                android:id="@+id/leave_type"
                style="@style/Widget.MaterialComponents.TextView"
                android:layout_width="wrap_content"
@@ -191,7 +192,116 @@
                    style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:inputType="number"/>
+                   android:inputType="number"
+                   android:text="0"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_reason_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:hint="@string/reasonText"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/dateToBtn"
+               >
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_reason_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="text"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_salaries_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginEnd="4dp"
+               android:hint="@string/withSalaries"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintEnd_toStartOf="@+id/input_basic_leave_layout"
+               app:layout_constraintTop_toBottomOf="@+id/input_reason_layout">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_salaries_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="text"
+                   android:text="0"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_basic_leave_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginStart="4dp"
+               android:hint="@string/basicLeave"
+               app:layout_constraintStart_toEndOf="@id/input_salaries_layout"
+               app:layout_constraintTop_toBottomOf="@+id/input_reason_layout"
+               app:layout_constraintEnd_toEndOf="parent">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_basic_leave_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="text"
+                   android:text="0"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_ika_leave_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginEnd="4dp"
+               android:hint="@string/leaveFromIka"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/input_salaries_layout"
+               app:layout_constraintEnd_toStartOf="@id/input_no_salaries_layout">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_ika_leave_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="text"
+                   android:text="0"/>
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_no_salaries_layout"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="12dp"
+               android:layout_marginStart="4dp"
+               android:hint="@string/withoutSalaries"
+               app:layout_constraintStart_toEndOf="@id/input_ika_leave_layout"
+               app:layout_constraintTop_toBottomOf="@id/input_salaries_layout"
+               app:layout_constraintEnd_toEndOf="parent">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/input_no_salaries_edit"
+                   style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:inputType="text"
+                   android:text="0"/>
 
            </com.google.android.material.textfield.TextInputLayout>
 

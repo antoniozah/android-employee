@@ -12,13 +12,21 @@
     <string name="days">Ημέρες</string>
     <string name="empty_date">../../....</string>
     <string name="appTitle">Έντυπο αδείας εργαζομένου</string>
+    <string name="reasonText">Αιτία</string>
+    <string name="withSalaries">Με Αποδοχές</string>
+    <string name="withoutSalaries">Άνευ Αποδοχών</string>
+    <string name="leaveFromIka">Άδεια από ΙΚΑ</string>
+    <string name="basicLeave">Καν. Άδεια</string>
+    <string name="noDataText">Δεν καταχωρήθηκαν στοιχεία!</string>
+    <string name="logoDescription">ATC company logo</string>
+    <string name="sendData">ΑΠΟΣΤΟΛΗ ΔΕΔΟΜΕΝΩΝ</string>
+    <string name="givenData">Στοιχεία που δώσατε</string>
 
     <string-array name="typeOfLeave">
         <item>Επιλέξτε τύπο άδειας</item>
         <item>Κανονική άδεια</item>
         <item>Άδεια άνευ αποδοχών</item>
         <item>Άδεια μετά αποδοχών</item>
-        <item>Άδεια ολίγων ωρών</item>
         <item>Άδεια ασθενείας</item>
     </string-array>
 </resources>

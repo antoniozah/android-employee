@@ -1,6 +1,7 @@
 package com.example.employee
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -8,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.employee.databinding.ActivityMainBinding
 import com.google.android.material.textview.MaterialTextView
 import java.util.*
-
 
 class MainActivity : AppCompatActivity()  {
 
@@ -66,7 +66,6 @@ class MainActivity : AppCompatActivity()  {
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-
         binding.dateFromBtn.setOnClickListener {
             onDatePickerHandler(year, month, day, binding.dateFromDate)
         }
@@ -76,6 +75,54 @@ class MainActivity : AppCompatActivity()  {
         }
 
         onSpinnerSelectHandler(leaveArray)
+
+        binding.submitBtn.setOnClickListener {
+            val fname = binding.inputNameEdit.text.toString()
+            val lname = binding.inputSurnameEdit.text.toString()
+            val role = binding.inputRoleEdit.text.toString()
+            val part = binding.inputPartEdit.text.toString()
+            val dateFrom = binding.dateFromDate.text.toString()
+            val dateTo = binding.dateToDate.text.toString()
+            val leaveDays = binding.inputDaysEdit.text?.toString() ?: "-"
+            val reason = binding.inputReasonEdit.text.toString()
+            val withSalaries = binding.inputSalariesEdit.text?.toString() ?: "-"
+            val basicLeave = binding.inputBasicLeaveEdit.text?.toString() ?: "-"
+            val ikaLeave = binding.inputIkaLeaveEdit.text?.toString() ?: "-"
+            val withoutSalaries = binding.inputNoSalariesEdit.text?.toString() ?: "-"
+
+            val employeeInfo = EmployeeData(fname, lname, role, part, selectedTypeOfLeave.toString(), dateFrom, dateTo, leaveDays, reason, withSalaries, basicLeave, ikaLeave, withoutSalaries )
+            Intent(this, ResultsActivity::class.java).also {
+                it.putExtra("EMPLOYEE_DATA", employeeInfo)
+                startActivity(it)
+            }
+        }
+    }
+
+    private fun inputFieldsVisibilityHandler(matchArgument: String) {
+        when (matchArgument) {
+            "Άδεια μετά αποδοχών" -> {
+                binding.inputReasonLayout.visibility = View.VISIBLE
+                binding.inputSalariesLayout.visibility = View.GONE
+                binding.inputBasicLeaveLayout.visibility = View.GONE
+                binding.inputNoSalariesLayout.visibility = View.GONE
+                binding.inputIkaLeaveLayout.visibility = View.GONE
+            }
+
+            "Άδεια ασθενείας" -> {
+                binding.inputReasonLayout.visibility = View.GONE
+                binding.inputSalariesLayout.visibility = View.VISIBLE
+                binding.inputBasicLeaveLayout.visibility = View.VISIBLE
+                binding.inputNoSalariesLayout.visibility = View.VISIBLE
+                binding.inputIkaLeaveLayout.visibility = View.VISIBLE
+            }
+            else -> {
+                binding.inputReasonLayout.visibility = View.GONE
+                binding.inputSalariesLayout.visibility = View.GONE
+                binding.inputBasicLeaveLayout.visibility = View.GONE
+                binding.inputNoSalariesLayout.visibility = View.GONE
+                binding.inputIkaLeaveLayout.visibility = View.GONE
+            }
+        }
     }
 
     private fun onDatePickerHandler(year: Int, month: Int,day: Int, selectedDateText: MaterialTextView) {
@@ -102,8 +149,11 @@ class MainActivity : AppCompatActivity()  {
                                 "" + leaveArray[position], Toast.LENGTH_SHORT
                         ).show()
                         selectedTypeOfLeave = leaveArray[position]
+                        selectedTypeOfLeave?.let { inputFieldsVisibilityHandler(it) }
                     } else {
                         Toast.makeText(this@MainActivity, "Επίλεξε τύπο αδείας!", Toast.LENGTH_SHORT).show()
+                        selectedTypeOfLeave = leaveArray[0]
+                        selectedTypeOfLeave?.let { inputFieldsVisibilityHandler(it) }
                     }
                 }
 
