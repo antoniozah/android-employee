@@ -77,20 +77,20 @@ class MainActivity : AppCompatActivity()  {
         onSpinnerSelectHandler(leaveArray)
 
         binding.submitBtn.setOnClickListener {
-            val fname = binding.inputNameEdit.text.toString()
-            val lname = binding.inputSurnameEdit.text.toString()
+            val fName = binding.inputNameEdit.text.toString()
+            val lName = binding.inputSurnameEdit.text.toString()
             val role = binding.inputRoleEdit.text.toString()
             val part = binding.inputPartEdit.text.toString()
             val dateFrom = binding.dateFromDate.text.toString()
             val dateTo = binding.dateToDate.text.toString()
             val leaveDays = binding.inputDaysEdit.text?.toString() ?: "-"
-            val reason = binding.inputReasonEdit.text.toString()
+            val reason = binding.inputReasonEdit.text?.toString() ?: "-"
             val withSalaries = binding.inputSalariesEdit.text?.toString() ?: "-"
             val basicLeave = binding.inputBasicLeaveEdit.text?.toString() ?: "-"
             val ikaLeave = binding.inputIkaLeaveEdit.text?.toString() ?: "-"
             val withoutSalaries = binding.inputNoSalariesEdit.text?.toString() ?: "-"
 
-            val employeeInfo = EmployeeData(fname, lname, role, part, selectedTypeOfLeave.toString(), dateFrom, dateTo, leaveDays, reason, withSalaries, basicLeave, ikaLeave, withoutSalaries )
+            val employeeInfo = EmployeeData(fName, lName, role, part, selectedTypeOfLeave.toString(), dateFrom, dateTo, leaveDays, reason, withSalaries, basicLeave, ikaLeave, withoutSalaries )
             Intent(this, ResultsActivity::class.java).also {
                 it.putExtra("EMPLOYEE_DATA", employeeInfo)
                 startActivity(it)

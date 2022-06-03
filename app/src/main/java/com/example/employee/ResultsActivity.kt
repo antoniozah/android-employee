@@ -2,7 +2,7 @@ package com.example.employee
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.employee.databinding.ActivityMainBinding
+import android.widget.Toast
 import com.example.employee.databinding.ActivityResultsBinding
 
 class ResultsActivity : AppCompatActivity() {
@@ -53,8 +53,27 @@ class ResultsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val employeeInfo = intent.getSerializableExtra("EMPLOYEE_DATA")
+        val employeeInfo = intent.getSerializableExtra("EMPLOYEE_DATA") as EmployeeData
 
-        binding.tvEmployeeData.text = employeeInfo.toString()
+        val (fName, lName, role, companyPart, typeOfLeave, dateFrom, dateTo, leaveDays, reason, withSalaries, basicLeave, ikaLeave, withoutSalaries) = employeeInfo
+        binding.tvNameValue.text = fName
+        binding.tvSurnameValue.text = lName
+        binding.tvRoleValue.text = role
+        binding.tvPartValue.text = companyPart
+        binding.tvLeaveTypeValue.text = typeOfLeave
+        binding.tvFromDateValue.text = dateFrom
+        binding.tvToDateValue.text = dateTo
+        binding.tvLeaveDaysValue.text = leaveDays
+        binding.tvReasonValue.text = reason
+        binding.tvWithSalariesValue.text = withSalaries
+        binding.tvBasicLeaveValue.text = basicLeave
+        binding.tvLeaveIkaValue.text = ikaLeave
+        binding.tvWithoutSalariesValue.text = withoutSalaries
+
+        binding.sendBtn.setOnClickListener {
+            Toast.makeText(this, "Τα δεδομένα σας στάλθηκαν επιτυχώς", Toast.LENGTH_LONG).show()
+            finish()
+        }
+
     }
 }

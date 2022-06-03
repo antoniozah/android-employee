@@ -21,6 +21,33 @@
     <string name="logoDescription">ATC company logo</string>
     <string name="sendData">ΑΠΟΣΤΟΛΗ ΔΕΔΟΜΕΝΩΝ</string>
     <string name="givenData">Στοιχεία που δώσατε</string>
+    <string name="nameLabel">Όνομα:</string>
+    <string name="nameValue">Όνομα Εργαζόμενου</string>
+    <string name="surnameLabel">Επίθετο:</string>
+    <string name="surnameValue">Επίθετο Εργαζομένου</string>
+    <string name="roleLabel">Ρόλος:</string>
+    <string name="roleValue">Ρόλος Εργαζομένου στην Εταιρεία</string>
+    <string name="partLabel">Τμήμα:</string>
+    <string name="partValue">Τμήμα που ανοίκει ο εργαζόμενος</string>
+    <string name="leaveFromLabel">Άδεια από:</string>
+    <string name="leaveFromValue">Ημερομηνία που ξεκινάει η άδεια</string>
+    <string name="leaveToLabel">Άδεια μέχρι:</string>
+    <string name="leaveToValue">Ημερομηνία που τελειώνει η άδεια</string>
+    <string name="leaveDaysLabel">Ημέρες αδείας:</string>
+    <string name="leaveDaysValue">Σύνολο ημερών που δηλώθηκαν ως άδεια</string>
+    <string name="reasonLabel">Αιτία:</string>
+    <string name="reasonValue">Αιτία αδείας</string>
+    <string name="withSalariesLabel">Με αποδοχές:</string>
+    <string name="withSalariesValue">Άδειες μετά αποδοχών</string>
+    <string name="basicLeaveLabel">Κανονική άδεια</string>
+    <string name="basicLeaveValue">Μέρες κανονικής αδείας</string>
+    <string name="withoutSalariesLabel">Άνευ αποδοχών:</string>
+    <string name="withoutSalariesValue">Μέρες αδειάς άνευ αποδοχών</string>
+    <string name="leaveIkaLabel">Άδεια από ΙΚΑ:</string>
+    <string name="leaveIkaValue">Μέρες αδείας από ΙΚΑ</string>
+    <string name="_0">0</string>
+    <string name="leaveTypeLabel">Είδος αδείας:</string>
+    <string name="leaveTypeValue">Είδος αδείας εργαζομένου</string>
 
     <string-array name="typeOfLeave">
         <item>Επιλέξτε τύπο άδειας</item>

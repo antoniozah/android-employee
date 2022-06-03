@@ -53,7 +53,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -65,15 +65,16 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Όνομα:"
+                    android:text="@string/nameLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Όνομα Εργαζόμενου"
+                    android:text="@string/nameValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -87,15 +88,16 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Επίθετο:"
+                    android:text="@string/surnameLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_surname_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Επίθετο Εργαζομένου"
+                    android:text="@string/surnameValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -108,15 +110,16 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ρόλος:"
+                    android:text="@string/roleLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_role_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Ρόλος Εργαζομένου στην Εταιρεία"
+                    android:text="@string/roleValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -130,15 +133,39 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Τμήμα:"
+                    android:text="@string/partLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_part_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Τμήμα που ανοίκει ο εργαζόμενος"
+                    android:text="@string/partValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/leave_type_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/leaveTypeLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_leave_type_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/leaveTypeValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -152,15 +179,16 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Άδεια από:"
+                    android:text="@string/leaveFromLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_from_date_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Ημερομηνία που ξεκινάει η άδεια"
+                    android:text="@string/leaveFromValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -174,15 +202,16 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Άδεια μέχρι:"
+                    android:text="@string/leaveToLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_to_date_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Ημερομηνία που τελειώνει η άδεια"
+                    android:text="@string/leaveToValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
@@ -196,34 +225,138 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ημέρες αδείας:"
+                    android:text="@string/leaveDaysLabel"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_leave_days_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Σύνολο ημερών που δηλώθηκαν ως άδεια"
+                    android:text="@string/leaveDaysValue"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reason_leave_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reasonLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_reason_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/reasonValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/with_salaries_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/withSalariesLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_with_salaries_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/withSalariesValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/basic_leave_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/basicLeaveLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_basic_leave_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/basicLeaveValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/leave_ika_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/leaveIkaLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_leave_ika_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/leaveIkaValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/without_salaries_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/withoutSalariesLabel"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_without_salaries_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/withoutSalariesValue"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
-
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvEmployeeData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="@string/noDataText"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/sendBtn"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sendBtn"

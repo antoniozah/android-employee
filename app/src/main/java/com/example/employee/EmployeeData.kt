@@ -11,7 +11,7 @@ data class EmployeeData(
     val dateFrom: String,
     val dateTo: String,
     val leaveDays: String?,
-    val reason: String,
+    val reason: String?,
     val withSalaries: String?,
     val basicLeave: String?,
     val ikaLeave: String?,
